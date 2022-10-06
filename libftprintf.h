@@ -23,7 +23,7 @@ int		di_case(int c);
 int		p_case(unsigned long long s);
 int		s_case(char	*s);
 int		xmin_case(unsigned int hexa);
-int	xmax_case(unsigned int hexa);
+int		xmax_case(unsigned int hexa);
 int		u_case(int c);
 
 #endif

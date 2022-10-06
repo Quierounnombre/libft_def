@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:06:26 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/10/05 19:47:27 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/10/06 18:30:55 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,3 @@ int	xmax_case(unsigned int hexa)
 	}
 	return (i);
 }
-
