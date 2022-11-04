@@ -19,6 +19,7 @@
 # include "stdarg.h"
 # include "limits.h"
 # include "stdint.h"
+# include "signal.h"
 
 typedef struct s_list
 {
