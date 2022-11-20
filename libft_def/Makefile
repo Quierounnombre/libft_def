@@ -44,6 +44,7 @@ FILES = ft_calloc \
 		ft_isdigit \
 		ft_isalnum \
 		ft_isascii \
+		ft_isspace \
 		ft_isprint \
 		ft_memset \
 		ft_memcpy \
@@ -66,6 +67,9 @@ FILES = ft_calloc \
 		ft_itoa_base \
 		ft_putunbr_fd \
 		ft_putuhexa_fd \
+		get_next_line_bonus \
+		get_next_line_utils_bonus \
+
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))

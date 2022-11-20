@@ -20,12 +20,23 @@
 # include "limits.h"
 # include "stdint.h"
 # include "signal.h"
+# include "fcntl.h"
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef enum bool
+{
+	false = 0,
+	true = 1
+}			t_bool;
 
 /*-----LstFuns-----*/
 t_list	*ft_lstnew(void *content);
@@ -44,6 +55,7 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+t_bool	ft_isspace(int c);
 
 /*-----StrFuns-----*/
 size_t	ft_strlen(const char *s);
@@ -86,4 +98,13 @@ void	ft_putnbr_base(long int nbr, char *base);
 void	ft_putunbr_fd(unsigned int n, int fd);
 void	ft_putuhexa_fd(unsigned int n, int fd, int mayus);
 
+/*-----GNL-----*/
+size_t	ft_strlen(const char *s);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strchr(const char *src, unsigned int c);
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+char	*ft_get_next_line(int fd);
+char	*read_main(char *buffer, int fd);
+char	*cut_line(char	*buffer);
+char	*take_rest(char *buffer);
 #endif
