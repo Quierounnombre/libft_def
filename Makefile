@@ -41,7 +41,7 @@ $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 	@echo "$(COLOUR_GREEN)Compilado"
 
-all : $(NAME)
+all : $(NAME) -j4
 
 clean :
 	$(MAKE) clean -C ./libft_def
