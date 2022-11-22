@@ -56,6 +56,7 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 t_bool	ft_isspace(int c);
+t_bool	ft_ishexa(int c);
 
 /*-----StrFuns-----*/
 size_t	ft_strlen(const char *s);

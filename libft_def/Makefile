@@ -69,6 +69,7 @@ FILES = ft_calloc \
 		ft_putuhexa_fd \
 		get_next_line_bonus \
 		get_next_line_utils_bonus \
+		ft_ishexa
 
 
 SRCS_DIR = ./
