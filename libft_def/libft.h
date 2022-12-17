@@ -21,6 +21,7 @@
 # include "stdint.h"
 # include "signal.h"
 # include "fcntl.h"
+# include "math.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 32
@@ -108,4 +109,7 @@ char	*ft_get_next_line(int fd);
 char	*read_main(char *buffer, int fd);
 char	*cut_line(char	*buffer);
 char	*take_rest(char *buffer);
+
+/*-----StorFuns-----*/
+t_bool	ft_store_file(int fd, char **target);
 #endif
