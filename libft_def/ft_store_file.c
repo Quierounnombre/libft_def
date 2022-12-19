@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 12:26:09 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/12/19 13:21:53 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/12/19 16:33:47 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ static char	**load(char **s, char *s2, int size)
 			new[i] = s2;
 		}
 		free(s);
+		return (new);
 	}
-	return (new);
+	return (NULL);
 }
 
 static t_bool	free_all(char **s, int size)
