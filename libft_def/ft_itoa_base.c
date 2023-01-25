@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:25:28 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/10/05 17:20:46 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/01/25 10:17:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,11 @@ char	*ft_itoa_base(long long c, char *base)
 	int		temp;
 	int		len;
 	int		baselen;
-	int		neg;
 
 	len = 0;
-	neg = 1;
 	baselen = ft_strlen(base);
 	if (c < 0)
-	{
-		neg = -1;
 		len++;
-	}
 	temp = c;
 	len = ft_calclen(temp, baselen) + len;
 	if (c == 0)
