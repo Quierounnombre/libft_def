@@ -36,10 +36,10 @@ OBJS = $(SRCS:.c=.o)
 $(NAME): $(OBJS)
 	$(MAKE) -C ./libft_def
 	cp $(LIBFT) $(NAME)
-	@echo "$(COLOUR_GREEN)Libreria compilada"
+	@echo "$(COLOUR_GREEN)Libreria base compilada$(COLOUR_END)"
 	$(CC) $(FLAGS) $(INCLUDES) $(SRCS)
 	ar -rcs $(NAME) $(OBJS)
-	@echo "$(COLOUR_GREEN)Compilado"
+	@echo "$(COLOUR_GREEN)Libreria compilada$(COLOUR_END)"
 
 all : $(NAME) -j4
 
