@@ -70,8 +70,8 @@ FILES = ft_calloc \
 		get_next_line_bonus \
 		get_next_line_utils_bonus \
 		ft_ishexa \
-		ft_store_file
-
+		ft_store_file \
+		load_vector3D
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
