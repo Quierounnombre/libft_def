@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 18:00:40 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/13 18:08:49 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/14 15:36:46 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ t_vector3D	load_vector3d(int i, int j, int k)
 	v.x = (float)i;
 	v.y = (float)j;
 	v.z = (float)k;
+	printf("load x %f | i %d\n", v.x, i);
 	return (v);
 }
