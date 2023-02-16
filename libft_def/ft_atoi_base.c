@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:14:54 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/10/05 14:42:10 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:57:52 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,29 @@ static int	potenciarecursiva(int numero, int potencia)
 	}
 }
 
+static int	mod_strlen(char *str, char *base, int base_size)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (str[i] != '\0')
+	{
+		while (j != base_size)
+		{
+			if (base[j] == str[i])
+				break ;
+			j++;
+		}
+		if (base_size == j)
+			return (i);
+		j = 0;
+		i++;
+	}
+	return (i);
+}
+
 int	ft_atoi_base(char *str, char *base)
 {
 	int		resultado;
@@ -35,7 +58,7 @@ int	ft_atoi_base(char *str, char *base)
 	i = -1;
 	j = -1;
 	m = ft_strlen(base);
-	n = ft_strlen(str);
+	n = mod_strlen(str, base, m);
 	resultado = 0;
 	while (i++ < n)
 	{
