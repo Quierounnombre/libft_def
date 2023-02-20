@@ -71,7 +71,8 @@ FILES = ft_calloc \
 		get_next_line_utils_bonus \
 		ft_ishexa \
 		ft_store_file \
-		load_vector3d
+		load_vector3d \
+		ft_wrap
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))

@@ -124,4 +124,8 @@ t_bool		ft_store_file(int fd, char **target);
 
 /*-----VectorFuns-----*/
 t_vector3D	load_vector3d(int i, int j, int k);
+
+/*-----MathFuns-----*/
+int			ft_wrap(int input, int min, int max);
+
 #endif
