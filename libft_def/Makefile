@@ -17,8 +17,25 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
-FILES = ft_calloc \
-		ft_strchr \
+BLACK = \033[0;30m
+RED =   \033[0;31m
+GREEN = \033[0;32m
+YELLOW =    \033[0;33m
+BLUE  = \033[0;34m
+MAGENTA =   \033[0;35m
+CYAN =  \033[0;36m
+LGRAY = \033[0;37m
+DGRAY = \033[1;30m
+LBLUE = \033[1;34m
+LGREEN = \033[1;32m
+LCYAN = \033[1;36m
+LRED = \033[1;31m
+LMAGENTA =\033[1;35m
+LYELLOW = \033[1;33m
+WHITE = \033[1;37m
+RESET = \033[0m
+
+FILES_STRFUNS = ft_strchr \
 		ft_strrchr \
 		ft_strlcat \
 		ft_strlcpy \
@@ -30,39 +47,24 @@ FILES = ft_calloc \
 		ft_strjoin \
 		ft_strtrim \
 		ft_split \
-		ft_putchar_fd \
-		ft_putstr_fd \
-		ft_putendl_fd \
-		ft_putnbr_fd \
 		ft_tolower \
 		ft_toupper \
 		ft_atoi \
 		ft_itoa \
 		ft_striteri \
 		ft_strmapi \
-		ft_memset \
-		ft_memcpy \
-		ft_memmove \
-		ft_bzero \
-		ft_memchr \
-		ft_memcmp \
-		ft_2dcalloc \
-		ft_putnbr_base \
 		ft_atoi_base \
 		ft_itoa_base \
-		ft_putunbr_fd \
-		ft_putuhexa_fd \
-		ft_store_file \
-		Cases \
-		c_case \
-		di_case \
-		p_case \
-		s_case \
-		xmin_case \
-		xmax_case \
-		u_case \
-		ft_test_output \
-		printf \
+
+STR_DIR = ./strfuns/
+SRCS_STR = $(addprefix $(STR_DIR), $(addsuffix .c, $(FILES_STRFUNS)))
+OBJS_STR = $(addprefix $(STR_DIR), $(addsuffix .o, $(FILES_STRFUNS)))
+
+FILES_TESTING = ft_test_output \
+
+TESTING_DIR = ./testing/
+SRCS_TESTING = $(addprefix $(TESTING_DIR), $(addsuffix .c, $(FILES_TESTING)))
+OBJS_TESTING = $(addprefix $(TESTING_DIR), $(addsuffix .o, $(FILES_TESTING)))
 
 FILES_CONTROL = ft_ishexa \
 			ft_isalpha \
@@ -97,28 +99,74 @@ LST_DIR = ./lstfuns/
 SRCS_LST = $(addprefix $(LST_DIR), $(addsuffix .c, $(FILES_LST)))
 OBJS_LST = $(addprefix $(LST_DIR), $(addsuffix .o, $(FILES_LST)))
 
-FILES_MATHFUNS = load_vector3d \
+FILES_MATHFUNS = load_vector3D \
 		ft_wrap \
 
-MATHFUNS = ./mathfuns/
+MATHFUNS_DIR = ./mathfuns/
+SRCS_MATHFUNS = $(addprefix $(MATHFUNS_DIR), $(addsuffix .c, $(FILES_MATHFUNS)))
+OBJS_MATHFUNS = $(addprefix $(MATHFUNS_DIR), $(addsuffix .o, $(FILES_MATHFUNS)))
 
-.c.o: $(SRCS_CONTROL)
-	$(CC) $(CFLAGS) -c -o $@ $<
+FILES_MEMSFUNS = ft_calloc \
+		ft_memset \
+		ft_memcpy \
+		ft_memmove \
+		ft_bzero \
+		ft_memchr \
+		ft_memcmp \
+		ft_2dcalloc \
+		ft_store_file \
 
-OBJS = $(OBJS_CONTROL) $(OBJS_GNL) $(OBJS_LST)
+MEMSFUNS_DIR = ./memsfuns/
+SRCS_MEMSFUNS = $(addprefix $(MEMSFUNS_DIR), $(addsuffix .c, $(FILES_MEMSFUNS)))
+OBJS_MEMSFUNS = $(addprefix $(MEMSFUNS_DIR), $(addsuffix .o, $(FILES_MEMSFUNS)))
+
+FILES_PRINTF = Cases \
+		c_case \
+		di_case \
+		p_case \
+		s_case \
+		xmin_case \
+		xmax_case \
+		u_case \
+		printf \
+
+PRINTF_DIR = ./printf/
+SRCS_PRINTF = $(addprefix $(PRINTF_DIR), $(addsuffix .c, $(FILES_PRINTF)))
+OBJS_PRINTF = $(addprefix $(PRINTF_DIR), $(addsuffix .o, $(FILES_PRINTF)))
+
+FILES_PUTFUNS = ft_putchar_fd \
+		ft_putstr_fd \
+		ft_putendl_fd \
+		ft_putnbr_fd \
+		ft_putunbr_fd \
+		ft_putuhexa_fd \
+		ft_putnbr_base \
+
+PUTFUNS_DIR = ./putfuns/
+SRCS_PUTFUNS = $(addprefix $(PUTFUNS_DIR), $(addsuffix .c, $(FILES_PUTFUNS)))
+OBJS_PUTFUNS = $(addprefix $(PUTFUNS_DIR), $(addsuffix .o, $(FILES_PUTFUNS)))
+
+OBJS = $(OBJS_CONTROL) $(OBJS_GNL) $(OBJS_LST) $(OBJS_MATHFUNS) $(OBJS_MEMSFUNS) $(OBJS_PUTFUNS) $(OBJS_STR) $(OBJS_TESTING)
+SRCS = $(SRCS_CONTROL) $(SRCS_GNL) $(SRCS_LST) $(SRCS_MATHFUNS) $(SRCS_MEMSFUNS) $(SRCS_PUTFUNS) $(SRCS_STR) $(SRCS_TESTING)
+
+.c.o: $(SRCS)
+	@$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
-	$(AR) $@ $^
+	@$(AR) $@ $^
+	@echo "$(GREEN)\nLibreria compilada\n$(RESET)" 
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS)
+	@$(RM) $(OBJS)
+	@echo "$(YELLOW)\nArchivos .o limpiados\n$(RESET)"
 
 fclean: clean
-	$(RM) $(NAME) 
+	@$(RM) $(NAME) 
+	@echo "$(RED)\nLibreria limpiada\n$(RESET)"
 
-re: clean all
+re: fclean all
 
 .PHONY: all clean fclean re
 

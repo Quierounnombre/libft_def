@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 //Imprime con un salto de linea la cadena en función del resultado
 void	ft_test_output(t_bool result, char *s)
