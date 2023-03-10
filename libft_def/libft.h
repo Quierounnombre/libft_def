@@ -53,6 +53,7 @@ typedef struct s_vector2D
 }			t_vector2D;
 
 /*-----LstFuns-----*/
+
 t_list		*ft_lstnew(void *content);
 void		ft_lstadd_front(t_list **lst, t_list *new);
 int			ft_lstsize(t_list *lst);
@@ -64,15 +65,17 @@ void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /*-----IsControl-----*/
-int			ft_isalpha(int c);
-int			ft_isdigit(int c);
-int			ft_isalnum(int c);
-int			ft_isascii(int c);
-int			ft_isprint(int c);
+
+t_bool		ft_isalpha(int c);
+t_bool		ft_isdigit(int c);
+t_bool		ft_isalnum(int c);
+t_bool		ft_isascii(int c);
+t_bool		ft_isprint(int c);
 t_bool		ft_isspace(int c);
 t_bool		ft_ishexa(int c);
 
 /*-----StrFuns-----*/
+
 size_t		ft_strlen(const char *s);
 size_t		ft_strlcpy(char *dest, const char *src, size_t size);
 size_t		ft_strlcat(char *dest, const char *src, size_t size);
@@ -95,6 +98,7 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 /*-----MemsFuns-----*/
+
 void		*ft_memset(void *b, int c, size_t len);
 void		ft_bzero(void *s, size_t n);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
@@ -103,8 +107,10 @@ void		*ft_memchr(const void *s, int c, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		*ft_calloc(size_t count, size_t size);
 void		**ft_2dcalloc(size_t size, size_t datatype);
+t_bool		ft_store_file(int fd, char **target);
 
 /*-----PutFuns-----*/
+
 void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
@@ -114,18 +120,31 @@ void		ft_putunbr_fd(unsigned int n, int fd);
 void		ft_putuhexa_fd(unsigned int n, int fd, int mayus);
 
 /*-----GNL-----*/
+
 char		*ft_get_next_line(int fd);
 char		*read_main(char *buffer, int fd);
 char		*cut_line(char	*buffer);
 char		*take_rest(char *buffer);
 
-/*-----StorFuns-----*/
-t_bool		ft_store_file(int fd, char **target);
+/*-----MathFuns-----*/
 
-/*-----VectorFuns-----*/
+int			ft_wrap(int input, int min, int max);
 t_vector3D	load_vector3d(int i, int j, int k);
 
-/*-----MathFuns-----*/
-int			ft_wrap(int input, int min, int max);
+/*-----TESTING-----*/
+
+void		ft_test_output(t_bool result, char *s);
+
+/*---PRINTF---*/
+
+int			ft_printf(char const *s, ...);
+int			cases(const char *s, va_list largv);
+int			c_case(char c);
+int			di_case(int c);
+int			p_case(unsigned long long s);
+int			s_case(char	*s);
+int			xmin_case(unsigned int hexa);
+int			xmax_case(unsigned int hexa);
+int			u_case(int c);
 
 #endif

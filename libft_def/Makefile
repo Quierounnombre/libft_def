@@ -40,12 +40,6 @@ FILES = ft_calloc \
 		ft_itoa \
 		ft_striteri \
 		ft_strmapi \
-		ft_isalpha \
-		ft_isdigit \
-		ft_isalnum \
-		ft_isascii \
-		ft_isspace \
-		ft_isprint \
 		ft_memset \
 		ft_memcpy \
 		ft_memmove \
@@ -54,7 +48,42 @@ FILES = ft_calloc \
 		ft_memcmp \
 		ft_2dcalloc \
 		ft_putnbr_base \
-		ft_lstnew \
+		ft_atoi_base \
+		ft_itoa_base \
+		ft_putunbr_fd \
+		ft_putuhexa_fd \
+		ft_store_file \
+		Cases \
+		c_case \
+		di_case \
+		p_case \
+		s_case \
+		xmin_case \
+		xmax_case \
+		u_case \
+		ft_test_output \
+		printf \
+
+FILES_CONTROL = ft_ishexa \
+			ft_isalpha \
+			ft_isdigit \
+			ft_isalnum \
+			ft_isascii \
+			ft_isspace \
+			ft_isprint \
+
+CONTROL_DIR = ./is_control/
+SRCS_CONTROL = $(addprefix $(CONTROL_DIR), $(addsuffix .c, $(FILES_CONTROL)))
+OBJS_CONTROL = $(addprefix $(CONTROL_DIR), $(addsuffix .o, $(FILES_CONTROL)))
+
+FILES_GNL =	get_next_line_bonus \
+		get_next_line_utils_bonus \
+
+GNL_DIR = ./gnl/
+SRCS_GNL = $(addprefix $(GNL_DIR), $(addsuffix .c, $(FILES_GNL)))
+OBJS_GNL = $(addprefix $(GNL_DIR), $(addsuffix .o, $(FILES_GNL)))
+
+FILES_LST =	ft_lstnew \
 	 	ft_lstadd_front \
 	 	ft_lstsize \
 	  	ft_lstlast \
@@ -63,26 +92,20 @@ FILES = ft_calloc \
 	  	ft_lstclear \
 	  	ft_lstiter \
 	  	ft_lstmap \
-		ft_atoi_base \
-		ft_itoa_base \
-		ft_putunbr_fd \
-		ft_putuhexa_fd \
-		get_next_line_bonus \
-		get_next_line_utils_bonus \
-		ft_ishexa \
-		ft_store_file \
-		load_vector3d \
-		ft_wrap
 
-SRCS_DIR = ./
-SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
+LST_DIR = ./lstfuns/
+SRCS_LST = $(addprefix $(LST_DIR), $(addsuffix .c, $(FILES_LST)))
+OBJS_LST = $(addprefix $(LST_DIR), $(addsuffix .o, $(FILES_LST)))
 
-OBJS_DIR = ./
-OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
+FILES_MATHFUNS = load_vector3d \
+		ft_wrap \
 
+MATHFUNS = ./mathfuns/
 
-.c.o: $(SRCS)
+.c.o: $(SRCS_CONTROL)
 	$(CC) $(CFLAGS) -c -o $@ $<
+
+OBJS = $(OBJS_CONTROL) $(OBJS_GNL) $(OBJS_LST)
 
 $(NAME): $(OBJS)
 	$(AR) $@ $^
