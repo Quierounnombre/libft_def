@@ -1,5 +1,0 @@
-#Object trash
-*.o
-
-#Build
-*.a
