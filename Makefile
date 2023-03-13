@@ -79,7 +79,6 @@ SRCS_CONTROL = $(addprefix $(CONTROL_DIR), $(addsuffix .c, $(FILES_CONTROL)))
 OBJS_CONTROL = $(addprefix $(CONTROL_DIR), $(addsuffix .o, $(FILES_CONTROL)))
 
 FILES_GNL =	get_next_line_bonus \
-		get_next_line_utils_bonus \
 
 GNL_DIR = ./gnl/
 SRCS_GNL = $(addprefix $(GNL_DIR), $(addsuffix .c, $(FILES_GNL)))

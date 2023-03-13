@@ -17,9 +17,7 @@ char	*ft_strchr(const char *src, unsigned int c)
 	while (*src != '\0')
 	{
 		if (*src == (unsigned char)c)
-		{
 			return ((char *)src);
-		}
 		src++;
 	}
 	if (c == '\0')
