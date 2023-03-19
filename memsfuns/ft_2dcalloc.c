@@ -12,7 +12,7 @@
 
 #include "../libft.h"
 
-void	**ft_2dcalloc(size_t size, size_t datatype)
+void	**ft_2dcalloc(size_t size, size_t datatype, size_t len)
 {
 	void	**arr;
 	size_t	i;
@@ -23,7 +23,17 @@ void	**ft_2dcalloc(size_t size, size_t datatype)
 		return (NULL);
 	while (i < size)
 	{
-		arr[i] = ft_calloc(1, datatype);
+		arr[i] = ft_calloc(len + 1, datatype);
+		if (!arr[i])
+		{
+			while (i)
+			{
+				i--;
+				free(arr[i]);
+			}
+			free(arr);
+			return (NULL);
+		}
 		i++;
 	}
 	return (arr);
