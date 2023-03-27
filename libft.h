@@ -29,8 +29,8 @@
 
 typedef enum KXA_BFAL
 {
-	int BUG
-}			t_KXA_BFAL;
+	Bug = 0
+}	t_KXA_BFAL;
 
 typedef struct s_list
 {
