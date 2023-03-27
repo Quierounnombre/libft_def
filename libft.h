@@ -27,6 +27,11 @@
 #  define BUFFER_SIZE 32
 # endif
 
+typedef enum KXA_BFAL
+{
+	int BUG
+}			t_KXA_BFAL;
+
 typedef struct s_list
 {
 	void			*content;
