@@ -94,6 +94,7 @@ FILES_LST =	ft_lstnew \
 	  	ft_lstiter \
 	  	ft_lstmap \
 		ft_lstclean \
+		ft_lstnnode \
 
 LST_DIR = ./lstfuns/
 SRCS_LST = $(addprefix $(LST_DIR), $(addsuffix .c, $(FILES_LST)))
