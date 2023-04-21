@@ -12,8 +12,6 @@
 
 #include "../libft.h"
 
-
-
 int	ft_printf(char const *s, ...)
 {
 	long int	printlen;
