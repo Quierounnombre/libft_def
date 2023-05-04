@@ -38,6 +38,13 @@ typedef struct s_list
 	struct s_list	*next;
 }			t_list;
 
+typedef struct s_lstmng
+{
+	struct s_list	*lst_head;
+	struct s_list	*tail;
+	int				size;
+}			t_lstmng;
+
 typedef enum bool
 {
 	false = 0,
