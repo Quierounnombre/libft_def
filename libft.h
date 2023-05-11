@@ -42,6 +42,7 @@ typedef struct s_lstmng
 {
 	struct s_list	*lst_head;
 	struct s_list	*tail;
+	struct s_list	*current;
 	int				size;
 }			t_lstmng;
 

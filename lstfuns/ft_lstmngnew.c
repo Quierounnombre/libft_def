@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:01:05 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/05/04 15:07:12 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/05/11 19:12:04 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_bool	ft_lstmngnew(t_list *lst)
 		mng->lst_head = lst;
 		mng->size = ft_lstsize(lst);
 		mng->tail = ft_lstlast(lst);
+		mng->current = lst;
 		return (true);
 	}
 	return (false);
