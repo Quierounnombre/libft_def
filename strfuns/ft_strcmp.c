@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 19:01:27 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/05/15 19:05:35 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/05/15 19:07:53 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Compara dos strings, retorna un boleano con verdadero o falso
 @return devuelve true si ambos son identicos en contenido y tamaño, en caso
 contrario devuelve false
 */
-t_bool	t_strcmp(char const *s1, char const *s2)
+t_bool	ft_strcmp(char const *s1, char const *s2)
 {
 	while (s1 && s2)
 	{
