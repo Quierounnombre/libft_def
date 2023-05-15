@@ -112,6 +112,7 @@ char		*ft_itoa(int c);
 char		*ft_itoa_base(long long c, char *base);
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+t_bool		t_strcmp(char const *s1, char const *s2);
 
 /*-----MemsFuns-----*/
 

@@ -55,6 +55,7 @@ FILES_STRFUNS = ft_strchr \
 		ft_strmapi \
 		ft_atoi_base \
 		ft_itoa_base \
+		ft_strcmp \
 
 STR_DIR = ./strfuns/
 SRCS_STR = $(addprefix $(STR_DIR), $(addsuffix .c, $(FILES_STRFUNS)))
