@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 19:01:27 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/05/15 19:07:53 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/07/22 18:33:16 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ contrario devuelve false
 */
 t_bool	ft_strcmp(char const *s1, char const *s2)
 {
-	while (s1 && s2)
+	while (*s1 && *s2)
 	{
 		if (*s1 != *s2)
 			return (false);
 		s1++;
 		s2++;
 	}
-	if (s1 || s2)
+	if (*s1 || *s2)
 		return (false);
 	return (true);
 }
