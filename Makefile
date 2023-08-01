@@ -74,6 +74,7 @@ FILES_CONTROL = ft_ishexa \
 			ft_isascii \
 			ft_isspace \
 			ft_isprint \
+			ft_ismayus \
 
 CONTROL_DIR = ./is_control/
 SRCS_CONTROL = $(addprefix $(CONTROL_DIR), $(addsuffix .c, $(FILES_CONTROL)))

@@ -46,7 +46,7 @@ typedef struct s_lstmng
 	int				size;
 }			t_lstmng;
 
-typedef enum bool
+typedef enum e_bool
 {
 	false = 0,
 	true = 1
@@ -89,6 +89,7 @@ t_bool		ft_isascii(int c);
 t_bool		ft_isprint(int c);
 t_bool		ft_isspace(int c);
 t_bool		ft_ishexa(int c);
+t_bool		ft_ismayus(char c);
 
 /*-----StrFuns-----*/
 
