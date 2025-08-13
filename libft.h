@@ -168,6 +168,6 @@ int			u_case(int c);
 
 /*-----TIMER-----*/
 
-struct timeval	ft_timer(bool reset);
+struct timeval	ft_timer(t_bool reset);
 
 #endif
