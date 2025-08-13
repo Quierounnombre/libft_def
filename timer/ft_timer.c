@@ -2,10 +2,10 @@
 
 /*
 Provides a timer, starts when the funtion is called for the first time
-@param if reset is != 0 restart the clock
+@param if reset is true restart the clock
 @return the timeval difference between the first call, and the current call
 */
-struct timeval	ft_timer(int reset)
+struct timeval	ft_timer(bool reset)
 {
 	static struct timeval	start;
 	struct timeval			measured;
