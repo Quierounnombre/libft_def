@@ -154,7 +154,7 @@ t_vector3D	load_vector3d(int i, int j, int k);
 
 void		ft_test_output(t_bool result, char *s);
 
-/*---PRINTF---*/
+/*-----PRINTF-----*/
 
 int			ft_printf(char const *s, ...);
 int			cases(const char *s, va_list largv);
@@ -165,5 +165,9 @@ int			s_case(char	*s);
 int			xmin_case(unsigned int hexa);
 int			xmax_case(unsigned int hexa);
 int			u_case(int c);
+
+/*-----TIMER-----*/
+
+struct timeval	ft_timer(void);
 
 #endif
