@@ -2,9 +2,10 @@
 
 /*
 Provides a timer, starts when the funtion is called for the first time
+@param if reset is != 0 restart the clock
 @return the timeval difference between the first call, and the current call
 */
-struct timeval	ft_timer(void)
+struct timeval	ft_timer(int reset)
 {
 	static struct timeval	start;
 	struct timeval			measured;
@@ -12,7 +13,7 @@ struct timeval	ft_timer(void)
 
 	result.tv_sec = 0;
 	result.tv_usec = 0;
-	if (start.tv_sec== 0)
+	if (start.tv_sec== 0 || reset)
 		gettimeofday(&start, NULL);
 	else
 	{
