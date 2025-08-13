@@ -22,6 +22,7 @@
 # include "signal.h"
 # include "fcntl.h"
 # include "math.h"
+# include <sys/time.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 32
