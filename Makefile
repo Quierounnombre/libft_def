@@ -103,8 +103,9 @@ LST_DIR = ./lstfuns/
 SRCS_LST = $(addprefix $(LST_DIR), $(addsuffix .c, $(FILES_LST)))
 OBJS_LST = $(addprefix $(LST_DIR), $(addsuffix .o, $(FILES_LST)))
 
-FILES_MATHFUNS = load_vector3D \
-		ft_wrap \
+FILES_MATHFUNS =	load_vector3D \
+					ft_wrap \
+					ft_calc_percent \
 
 MATHFUNS_DIR = ./mathfuns/
 SRCS_MATHFUNS = $(addprefix $(MATHFUNS_DIR), $(addsuffix .c, $(FILES_MATHFUNS)))
