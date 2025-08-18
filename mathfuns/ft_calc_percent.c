@@ -12,7 +12,7 @@ int		ft_calc_percent(int	total, int part)
 {
 	double	ret;
 	
-	ret = total / part;
+	ret = part / total;
 	ret *= TO_PORCENTAJE;
 	return (ret);
 }
