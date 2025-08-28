@@ -2,7 +2,7 @@
 
 /*
 Provides a timer, starts when the funtion is called for the first time
-@param if reset is true restart the clock
+@param reset if reset is true restart the clock
 @return the timeval difference between the first call, and the current call
 */
 struct timeval	ft_timer(t_bool reset)
