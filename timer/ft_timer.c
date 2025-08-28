@@ -13,7 +13,7 @@ struct timeval	ft_timer(t_bool reset)
 
 	result.tv_sec = 0;
 	result.tv_usec = 0;
-	if (start.tv_sec== 0 || reset)
+	if ((start.tv_sec == 0 && start.tv_usec == 0)|| reset)
 		gettimeofday(&start, NULL);
 	else
 	{
