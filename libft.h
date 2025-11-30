@@ -66,6 +66,22 @@ typedef struct s_vector2D
 	float	y;
 }			t_vector2D;
 
+/*
+Welford algorithm for calculating a running mean
+*/
+
+/*
+Holy bible 
+https://www.embeddedrelated.com/showarticle/785.php
+*/
+
+typedef struct s_welford
+{
+	int		n_samples;
+	double	mean;
+	double	sqrd_mean;
+}			t_welford;
+
 /*-----LstFuns-----*/
 
 t_list		*ft_lstnew(void *content);
@@ -170,5 +186,11 @@ int			u_case(int c);
 /*-----TIMER-----*/
 
 struct timeval	ft_timer(t_bool reset);
+
+/*-----ALGORITHMS-----*/
+
+double		welford_calc_stddev(t_welford *wf);
+double		welford_calc_variance(t_welford *wf);
+void		welford_add_sample(t_welford *wf, double sample);
 
 #endif
