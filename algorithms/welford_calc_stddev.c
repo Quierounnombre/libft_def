@@ -8,7 +8,11 @@ Gets the stddev from wf
 double	welford_calc_stddev(t_welford *wf)
 {
 	double	stddev;
+	double	variance;
 
-	stddev = sqrt(welford_calc_variance(wf));
+	stddev = 0.0;
+	variance = welford_calc_variance(wf);
+	if (variance)
+		stddev = sqrt(welford_calc_variance(wf));
 	return (stddev);
 }

@@ -160,6 +160,7 @@ OBJS_TIMER = $(addprefix $(TIMER_DIR), $(addsuffix .o, $(FILES_TIMER)))
 FILES_ALGORITHMS = welford_add_sample \
 				welford_calc_stddev \
 				welford_calc_variance \
+				welford_empty \
 
 ALGORITHMS_DIR = ./algorithms/
 SRCS_ALGORITHMS = $(addprefix $(ALGORITHMS_DIR), $(addsuffix .c, $(FILES_ALGORITHMS)))

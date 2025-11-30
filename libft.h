@@ -192,5 +192,6 @@ struct timeval	ft_timer(t_bool reset);
 double		welford_calc_stddev(t_welford *wf);
 double		welford_calc_variance(t_welford *wf);
 void		welford_add_sample(t_welford *wf, double sample);
+void		welford_empty(t_welford *wf);
 
 #endif
